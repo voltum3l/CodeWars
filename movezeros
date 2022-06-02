@@ -1,0 +1,13 @@
+#Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of
+# the other elements.
+
+def move_zeros(argumento):
+    ceros=[]
+    for i in range(len(argumento)):
+        if argumento[i]==0:
+            ceros.append(i)
+
+    for i in reversed(ceros):
+        argumento.pop(i)
+        argumento.append(0)
+    return argumento
