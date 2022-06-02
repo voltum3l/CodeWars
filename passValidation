@@ -1,0 +1,24 @@
+def passwordValidation(cadena):
+    validar=True
+    digito=False
+    minuscula=False
+    mayuscula=False
+    otroChar=False
+
+    if len(cadena) < 6:
+        validar=False
+    else:
+        for i in range(len(cadena)):
+            if cadena[i].isdigit():
+                digito=True
+            if cadena[i].islower():
+                minuscula=True
+            if cadena[i].isupper():
+                mayuscula=True
+            if cadena[i].isdigit()==False and cadena[i].islower()==False and cadena[i].isupper()==False:
+                otroChar=True
+
+        if digito!=True or minuscula!=True or mayuscula!=True or otroChar:
+            validar=False
+
+    return validar
